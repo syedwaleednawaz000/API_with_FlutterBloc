@@ -18,5 +18,38 @@ class PostRepository {
       throw ex;
     }
   }
+  Future<void> postData({required Map<String , dynamic> map }) async {
+    try {
+      Response response = await api.sendRequest.post("/posts",data: map,);
+      if(response.statusCode == 200){
+
+      }
+      // List<dynamic> postMaps = response.data;
+      // return postMaps.map((postMap) => PostModel.fromJson(postMap)).toList();
+    }
+    catch(ex) {
+      throw ex;
+    }
+  }
+  Future<void> deleteData({required Map<String , dynamic> map }) async {
+    try {
+      Response response = await api.sendRequest.post("/posts",data: map,);
+      // List<dynamic> postMaps = response.data;
+      // return postMaps.map((postMap) => PostModel.fromJson(postMap)).toList();
+    }
+    catch(ex) {
+      throw ex;
+    }
+  }
+  Future<void> updateData({required Map<String , dynamic> map }) async {
+    try {
+      Response response = await api.sendRequest.put("/posts",data: map,);
+      // List<dynamic> postMaps = response.data;
+      // return postMaps.map((postMap) => PostModel.fromJson(postMap)).toList();
+    }
+    catch(ex) {
+      throw ex;
+    }
+  }
 
 }
